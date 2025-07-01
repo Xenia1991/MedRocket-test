@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+Реализовать приложение в соответствии с предложенным макетом, в котором будут
+представлены списки пользователей и их альбомов с фотографиями.
+ОБЩИЕ ТРЕБОВАНИЯ:
+1. Приложение должно работать в chrome и firefox.
+2. Приложение должно быть реализовано на Vue.js (2 версии) и Vue-router.
+3. Для HTTP запросов можно использовать axios или fetch.
+4. Для хранения состояния приложения можно использовать vuex или pinia.
+4. Запрещено использовать любые библиотеки кроме вышеуказанных.
+5. При необходимости можно использовать sass(scss) препроцессор.
+6. Код должен быть чистым и читабельным.
+7. Не должно быть необоснованного дублирования.
+8. Код должен быть отформатирован в едином стиле.
+9. Вёрстка должна совпадать с макетами figma.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ОПИСАНИЕ API:
+1. Список пользователей https://json.medrocket.ru/users/
+2. Список альбомов по пользователям https://json.medrocket.ru/albums?userId=3
+3. Список фотографий альбома https://json.medrocket.ru/photos?albumId=2
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+ОПИСАНИЕ ПРИЛОЖЕНИЯ:
+1. При входе на страницу подгружается только список пользователей. Альбомы и
+фотографии загружаются при клике на списки.
+2. При нажатии на фото оно отображается в полноразмерном формате.
+3. При клике на звезду:
+a) Если фотография не в избранном - она попадает в список избранного, а звезда
+становится активной (жёлтой).
+b) Если фотография в избранном - она удаляется из списка избранного, а звезда
+становится неактивной (серой).
+4. Приложение запоминает избранные фотографии даже после перезагрузки
+страницы.
+ВКЛАДКА «КАТАЛОГ»:
+1. Списки раскрываются и закрываются при клике на них.
+2. При клике на пользователя открывается его список альбомов.
+3. При клике на альбом раскрывается его список фотографий.
+4. При наведении курсора на фотографию всплывает название этого фото (title).
+ВКЛАДКА «ИЗБРАННОЕ»:
+1. Здесь отображаются избранные фотографии, это фото, у которых нажали на звезду.
+2. Рядом с фотографией отображается название.
