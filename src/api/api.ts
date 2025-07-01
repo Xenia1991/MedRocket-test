@@ -1,20 +1,55 @@
 import type { UserList, UserAlbum, UserAlbumList } from '../types/api';
 
-export const getUserList = async (): Promise<UserList> => {
-    const response = await fetch('https://json.medrocket.ru/users/');
-    const data = await response.json();
-    return data;
+export const getUserList = async (): Promise<UserList>=> {
+    try {
+        const response = await fetch('https://json.medrocket.ru/users/');
+        if (!response.ok) {
+            throw new Error('Oops! HTTP Error');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.log('ERROR! Try again later', error);
+        } else {
+            console.log('Unknown error happens', error);
+        }
+        throw error;
+    }
 };
 
 export const getUserAlbums = async (userId: number): Promise<UserAlbumList> => {
-    const response = await fetch(`https://json.medrocket.ru/albums?userId=${userId}`);
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch(`https://json.medrocket.ru/albums?userId=${userId}`);
+        if (!response.ok) {
+            throw new Error('Oops! HTTP Error');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.log('ERROR! Try again later', error);
+        } else {
+            console.log('Unknown error happens', error);
+        }
+        throw error;
+    }
 };
 
 export const getAlbum = async (albumId: number): Promise<UserAlbum> => {
-    const response = await fetch(`https://json.medrocket.ru/photos?albumId=${albumId}`);
-    const data = await response.json();
-    console.log(data)
-    return data;
+    try {
+        const response = await fetch(`https://json.medrocket.ru/photos?albumId=${albumId}`);
+        if (!response.ok) {
+            throw new Error('Oops! HTTP Error');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.log('ERROR! Try again later', error); 
+        } else {
+            console.log('Unknown error happens', error);
+        }
+        throw error;
+    }
 };
