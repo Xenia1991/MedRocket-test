@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import User from '../User';
-import styles from './UserList.module.scss';
+
 import { type SingleUser, type UserList as UserListType} from '../../types/api';
 import { getUserList } from '../../api';
+
+import User from '../User';
+import styles from './UserList.module.scss';
 
 const UserList = () => {
     const [userList, setUserList] = useState<UserListType>([]);
@@ -23,7 +25,7 @@ const UserList = () => {
                 )
             })}
         </ul>
-    )
+    );
 };
 
 export default UserList;
