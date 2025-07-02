@@ -8,6 +8,7 @@ import styles from './User.module.scss';
 
 const User = ({name, id}: SingleUser) => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
+
     const handleClick = () => {
         setIsClicked((prev) => !prev);
     };

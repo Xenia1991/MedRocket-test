@@ -6,10 +6,12 @@ import { getAlbum } from '../../api';
 import useStore from '../../store/store';
 
 import Modal from '../Modal';
+import Loader from '../Loader';
 import styles from './Album.module.scss';
 
 const Album = ({isClicked, id}: AlbumProps )=> {
     const [albumCollection, setAlbumContent] = useState<AlbumList>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const {url, setUrl, setIsModalOpened} = useStore();
 
     useEffect(() => {
@@ -17,6 +19,7 @@ const Album = ({isClicked, id}: AlbumProps )=> {
             const getData= async () => {
                 const data = await getAlbum(id);
                 setAlbumContent(data);
+                setIsLoading(false);
             };
             getData();
         }
@@ -30,6 +33,7 @@ const Album = ({isClicked, id}: AlbumProps )=> {
     
     return (
         <div className={styles.container}>
+            {isLoading && <Loader />}
             {albumCollection?.map((collection) => {
                 const {id, thumbnailUrl, url} = collection;
                 return (
