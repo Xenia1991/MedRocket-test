@@ -36,7 +36,7 @@ export type SingleUserAlbum = {
 
 export type UserAlbumList = SingleUserAlbum[];
 
-type Album = {
+export type SingleAlbum = {
     albumId: number,
     id: number,
     title: string,
@@ -44,4 +44,4 @@ type Album = {
     thumbnailUrl: string,
 };
 
-export type AlbumList = Album[];
+export type AlbumList = SingleAlbum[];

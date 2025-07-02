@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import type { AlbumProps } from '../../types/Album';
 import type { AlbumList } from '../../types/api';
 import { getAlbum } from '../../api';
+import useStore from '../../store/store';
 
+import Modal from '../Modal';
 import styles from './Album.module.scss';
 
 const Album = ({isClicked, id}: AlbumProps )=> {
     const [albumCollection, setAlbumContent] = useState<AlbumList>([]);
-    const [isImgClicked, setIsImgClicked] = useState<boolean>(false);
+    const {url, setUrl, setIsModalOpened} = useStore();
 
     useEffect(() => {
         if (isClicked) {
@@ -18,23 +20,26 @@ const Album = ({isClicked, id}: AlbumProps )=> {
             };
             getData();
         }
-    }, [isClicked, id])
+    }, [isClicked, id]);
     
-    const handleClick = () => {
-        setIsImgClicked((prev) => !prev);
-        console.log('click')
-    }
+    const handleClick = (imgUrl: string) => {
+        setUrl(imgUrl);
+        setIsModalOpened(true);
+        console.log('click');
+    };
+    
     return (
         <div className={styles.container}>
             {albumCollection?.map((collection) => {
-                const {id, thumbnailUrl} = collection;
+                const {id, thumbnailUrl, url} = collection;
                 return (
-                    <div onClick={handleClick} key={id}>
-                        <img src={thumbnailUrl}/>
+                    <div key={id}>
+                        <div onClick={() => handleClick(url)}>
+                            <img src={thumbnailUrl}/>
+                        </div>  
                     </div>
                 )
             })}
-            
         </div>
     )
 };
