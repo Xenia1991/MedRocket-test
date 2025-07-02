@@ -8,6 +8,7 @@ import styles from './Album.module.scss';
 
 const Album = ({isClicked, id}: AlbumProps )=> {
     const [albumCollection, setAlbumContent] = useState<AlbumList>([]);
+    const [isImgClicked, setIsImgClicked] = useState<boolean>(false);
 
     useEffect(() => {
         if (isClicked) {
@@ -19,13 +20,21 @@ const Album = ({isClicked, id}: AlbumProps )=> {
         }
     }, [isClicked, id])
     
+    const handleClick = () => {
+        setIsImgClicked((prev) => !prev);
+        console.log('click')
+    }
     return (
         <div className={styles.container}>
             {albumCollection?.map((collection) => {
+                const {id, thumbnailUrl} = collection;
                 return (
-                    <img src={collection.thumbnailUrl}/>
+                    <div onClick={handleClick} key={id}>
+                        <img src={thumbnailUrl}/>
+                    </div>
                 )
             })}
+            
         </div>
     )
 };
