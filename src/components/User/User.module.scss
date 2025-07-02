@@ -1,0 +1,11 @@
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.userName {
+    font-family: 'Roboto Medium', sans-serif;
+    font-size: 20px;
+}

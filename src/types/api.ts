@@ -15,7 +15,7 @@ type Company = {
     bs: string,
 };
 
-type User = {
+export type SingleUser = {
     id: number,
     name: string,
     username: string,
@@ -26,15 +26,15 @@ type User = {
     company: Company,
 };
 
-type UserList = User[];
+export type UserList = SingleUser[];
 
-type UserAlbum = {
+export type UserAlbum = {
     userId: number,
     id: number,
     title: string,
 };
 
-type UserAlbumList = UserAlbum[];
+export type UserAlbumList = UserAlbum[];
 
 type Album = {
     albumId: number,
@@ -44,10 +44,4 @@ type Album = {
     thumbnailUrl: string,
 };
 
-type AlbumList = Album[];
-
-export {
-    UserList,
-    UserAlbumList,
-    UserAlbum,
-};
+export type AlbumList = Album[];
