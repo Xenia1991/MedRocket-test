@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {type SingleUser} from '../../types/api';
 
 import ToggleButton from '../ToggleButton';
-import AlbumList from '../AlbumList';
+import UserAlbumList from '../UserAlbumList';
 import styles from './User.module.scss';
 
 const User = ({name, id}: SingleUser) => {
@@ -19,7 +19,7 @@ const User = ({name, id}: SingleUser) => {
                 <div className={styles.userName}>{name}</div>
             </li>
             <li className={styles.albumList}>
-                {isClicked ? <AlbumList userId={id} isClicked={isClicked}/> : null}
+                {isClicked ? <UserAlbumList userId={id} isClicked={isClicked}/> : null}
             </li>
         </>
     );

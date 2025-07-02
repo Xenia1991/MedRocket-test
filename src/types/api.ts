@@ -28,13 +28,13 @@ export type SingleUser = {
 
 export type UserList = SingleUser[];
 
-export type UserAlbum = {
+export type SingleUserAlbum = {
     userId: number,
     id: number,
     title: string,
 };
 
-export type UserAlbumList = UserAlbum[];
+export type UserAlbumList = SingleUserAlbum[];
 
 type Album = {
     albumId: number,

@@ -1,4 +1,4 @@
-export type AlbumListProps = {
+export type UserAlbumListProps = {
     userId: number;
     isClicked: boolean;
 };

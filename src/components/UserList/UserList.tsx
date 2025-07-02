@@ -18,7 +18,7 @@ const UserList = () => {
     }, []);
 
     return (
-        <ul>
+        <ul className={styles.userList}>
             {userList.map((user: SingleUser) => {
                 return (
                     <User key={user.id} {...user}/>
