@@ -4,6 +4,7 @@ import {type SingleUserAlbum} from '../../types/api';
 
 import ToggleButton from '../ToggleButton';
 import styles from './UserAlbum.module.scss';
+import Album from '../Album';
 
 const UserAlbum = ({title, id}: SingleUserAlbum) => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -17,7 +18,9 @@ const UserAlbum = ({title, id}: SingleUserAlbum) => {
                 <ToggleButton onClick={handleClick} isClicked={isClicked}/>
                 <div className={styles.albumTitle}>{title}</div>
             </li>
-            <div className={styles.toggleUserAlbum}></div>
+            <div className={styles.toggleUserAlbum}>
+                {isClicked ? <Album isClicked={isClicked} id={id}/> : null}
+            </div>
         </>
     );
 };

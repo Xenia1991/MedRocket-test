@@ -1,4 +1,4 @@
-import type { UserList, UserAlbum, UserAlbumList } from '../types/api';
+import type { UserList, AlbumList, UserAlbumList } from '../types/api';
 
 export const getUserList = async (): Promise<UserList>=> {
     try {
@@ -36,7 +36,7 @@ export const getUserAlbums = async (userId: number): Promise<UserAlbumList> => {
     }
 };
 
-export const getAlbum = async (albumId: number): Promise<UserAlbum> => {
+export const getAlbum = async (albumId: number): Promise<AlbumList> => {
     try {
         const response = await fetch(`https://json.medrocket.ru/photos?albumId=${albumId}`);
         if (!response.ok) {
