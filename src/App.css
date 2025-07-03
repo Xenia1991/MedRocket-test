@@ -1,7 +1,12 @@
 #root {
     width: 744px;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-p {
+p, li, ul {
     margin: 0;
+    padding: 0;
 }

@@ -1,7 +1,8 @@
 .container {
-    max-width: 744px;
+    width: 690px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 42px;
+    padding: 0 56px;
 }

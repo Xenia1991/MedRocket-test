@@ -44,11 +44,9 @@ const Album = ({isClicked, id}: AlbumProps )=> {
             {albumCollection?.map((collection) => {
                 const {id, thumbnailUrl, url} = collection;
                 return (
-                    <div key={id}>
-                        <div onClick={() => handleClick(url)}>
-                            <img src={thumbnailUrl}/>
-                        </div>  
-                    </div>
+                    <div key={id} onClick={() => handleClick(url)}>
+                        <img src={thumbnailUrl}/>
+                    </div>  
                 )
             })}
         </div>

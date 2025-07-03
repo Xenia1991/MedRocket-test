@@ -1,3 +1,7 @@
 .userList {
+    padding-top: 16px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

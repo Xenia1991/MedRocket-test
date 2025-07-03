@@ -1,4 +1,11 @@
 .albumList {
+    width: 744px;
+    height: auto;
     list-style: none;
     font-family: 'Roboto Regular', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 54px;
 }
