@@ -8,6 +8,7 @@ import useStore from '../../store/store';
 import Loader from '../Loader';
 import Error from '../Error';
 import styles from './Album.module.scss';
+import FavoriteButton from '../FavoriteButton';
 
 const Album = ({isClicked, id}: AlbumProps )=> {
     const [albumCollection, setAlbumContent] = useState<AlbumList>([]);
@@ -37,6 +38,8 @@ const Album = ({isClicked, id}: AlbumProps )=> {
         console.log('click');
     };
     
+    
+
     return (
         <div className={styles.container}>
             {isLoading && <Loader />}
@@ -45,7 +48,7 @@ const Album = ({isClicked, id}: AlbumProps )=> {
                 const {id, thumbnailUrl, url} = collection;
                 return (
                     <div className={styles.albumImg} key={id} onClick={() => handleClick(url)}>
-                        <button className={styles.favoriteButtonEmpty}/>
+                        <FavoriteButton {...collection}/>
                         <img src={thumbnailUrl} />
                     </div>  
                 )
