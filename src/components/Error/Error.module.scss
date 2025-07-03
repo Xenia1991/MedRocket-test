@@ -1,0 +1,26 @@
+.error {
+    box-sizing: border-box;
+    width: 744px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:  10px;
+}
+
+.errorImg {
+    width: 340px;
+    height: 198px;
+    background-image: url('../../assets/error.png');
+    background-repeat: no-repeat;
+    background-position: 80% 40%;
+}
+
+.errorNotify {
+    font-family: 'Roboto Medium', sans-serif;
+}
+
+.errorMessage {
+    font-family: 'Roboto Regular', sans-serif;
+}
