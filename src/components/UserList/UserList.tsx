@@ -30,7 +30,7 @@ const UserList = () => {
     return (
         <>
             {isLoading && <Loader />}
-            {isError && <Error />}
+            {isError && <Error isColumn/>}
             <ul className={styles.userList}>
                 {userList.map((user: SingleUser) => {
                     return (

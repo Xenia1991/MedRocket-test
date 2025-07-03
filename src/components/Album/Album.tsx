@@ -50,7 +50,7 @@ const Album = ({isClicked, id}: AlbumProps )=> {
                 )
             })}
         </div>
-    )
+    );
 };
 
 export default Album;
