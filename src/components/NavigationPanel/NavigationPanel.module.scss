@@ -4,6 +4,7 @@
     justify-content: center;
     font-family: 'Roboto Regular', sans-serif;
     font-size: 18px;
+    margin-top: 6px;
 }
 
 .catalog,
@@ -17,8 +18,8 @@
     border-radius: 10px;
 }
 
-.catalog:hover,
-.favorites:hover {
+.catalog:active,
+.favorites:active {
     color: #117DC1;
     box-sizing: border-box;
     width: 372px;

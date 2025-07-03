@@ -44,8 +44,9 @@ const Album = ({isClicked, id}: AlbumProps )=> {
             {albumCollection?.map((collection) => {
                 const {id, thumbnailUrl, url} = collection;
                 return (
-                    <div key={id} onClick={() => handleClick(url)}>
-                        <img src={thumbnailUrl}/>
+                    <div className={styles.albumImg} key={id} onClick={() => handleClick(url)}>
+                        <button className={styles.favoriteButtonEmpty}/>
+                        <img src={thumbnailUrl} />
                     </div>  
                 )
             })}

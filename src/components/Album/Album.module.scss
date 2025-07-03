@@ -6,3 +6,29 @@
     gap: 42px;
     padding: 0 56px;
 }
+
+.albumImg {
+    position: relative;
+    cursor: pointer;
+}
+
+.favoriteButtonEmpty,
+.favoriteButtonActive {
+    margin: 8px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.favoriteButtonEmpty {
+    background-image: url('../../assets/star_empty.png');
+}
+
+.favoriteButtonActive {
+    background-image: url('../../assets/star_active.png');
+}
