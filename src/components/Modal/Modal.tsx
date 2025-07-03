@@ -1,5 +1,3 @@
-import ReactDOM from 'react-dom';
-
 import useStore from '../../store/store';
 
 import styles from './Modal.module.scss';
@@ -17,8 +15,8 @@ const Modal = () => {
 
     return (
         <div className={styles.modalOverlay}>
+            <button onClick={handleClick} className={styles.modalButton} />
             <div className={styles.modalContent}>
-                <button onClick={handleClick}>Закрыть</button>
                 <img src={url}/>
             </div>
         </div>
