@@ -1,0 +1,18 @@
+.collectionContainer {
+    width: 744px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 56px 105px;
+    display: flex;
+    gap: 42px;
+    flex-wrap: wrap;
+}
+
+.imgWrapper {
+    width: 150px;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #787878;
+    position: relative;
+}

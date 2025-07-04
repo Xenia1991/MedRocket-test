@@ -1,5 +1,5 @@
 import type { SingleAlbum } from "./api";
-
+    
 export type Store = {
     url: string;
     setUrl: (url: string) => void;

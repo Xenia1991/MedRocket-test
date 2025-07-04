@@ -7,7 +7,7 @@ const useStore = create<Store>((set) => ({
     isModalOpened: false,
     setIsModalOpened: (newState) => set(() => ({isModalOpened: newState})),
     favoriteCollection: [],
-    addCollection: (collection) => set((state) => ({favoriteCollection: [collection, ...state.favoriteCollection]})),
+    addCollection: (collection) => set((state) => ({favoriteCollection: [...state.favoriteCollection, collection]})),
     deleteCollection: (collection) => set((state) => ({
         favoriteCollection: state.favoriteCollection.filter((item) => item.id !== collection.id),
     }))

@@ -6,12 +6,12 @@ import type { SingleAlbum } from '../../types/api';
 import styles from './FavoriteButton.module.scss';
 
 const FavoriteButton = (collection : SingleAlbum) => {
-    const [isActive, setIsActive] = useState<boolean>(false);
-    const {addCollection, deleteCollection} = useStore();
-
+    const {favoriteCollection, addCollection, deleteCollection} = useStore();
+    const isActive = favoriteCollection.find((favoriteCollection) => {
+        return favoriteCollection.id === collection.id;
+    })
     const handleButtonClick = (event: { stopPropagation: () => void; }) => {
         event.stopPropagation();
-        setIsActive(prev => !prev);
         if (!isActive) {
             addCollection(collection);
         } else {
