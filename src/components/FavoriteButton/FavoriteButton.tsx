@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import useStore from '../../store/store';
 
 import type { SingleAlbum } from '../../types/api';
