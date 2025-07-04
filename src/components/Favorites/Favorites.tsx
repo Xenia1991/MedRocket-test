@@ -1,7 +1,8 @@
+import Empty from '../Empty/Empty';
 import styles from './Favorites.module.scss';
 
 const Favorites = () => {
-    return (<div>Favorites</div>)
+    return (<div><Empty /></div>)
 };
 
 export default Favorites;
