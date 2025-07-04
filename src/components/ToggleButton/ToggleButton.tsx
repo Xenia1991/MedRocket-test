@@ -1,5 +1,3 @@
-import { useState, type MouseEventHandler } from 'react';
-
 import { type ToggleButtonProps } from '../../types/toggleButton';
 
 import styles from './ToggleButton.module.scss';
