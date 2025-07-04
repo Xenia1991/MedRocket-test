@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import styles from './NavigationPanel.module.scss';
 
 const NavigationPanel = () => {
     return (
         <div className={styles.navigation}>
-            <a className={styles.catalog}>Каталог</a>
-            <a className={styles.favorites}>Избранное</a>
+            <Link to='/' className={styles.catalog}>Каталог</Link>
+            <Link to='/favorites' className={styles.favorites}>Избранное</Link>
         </div>
     );
 };
