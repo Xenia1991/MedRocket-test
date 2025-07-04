@@ -8,4 +8,8 @@ export type Store = {
     favoriteCollection: SingleAlbum[];
     addCollection: (collection: SingleAlbum) => void;
     deleteCollection: (collection: SingleAlbum) => void;
+    title: string;
+    setTitle: (text: string) => void;
+    isMouseOver: boolean;
+    setIsMouseOver: (newState: boolean) => void;
 };
