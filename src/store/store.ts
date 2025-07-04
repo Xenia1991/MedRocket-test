@@ -6,6 +6,11 @@ const useStore = create<Store>((set) => ({
     setUrl: (newUrl) => set(() => ({url: newUrl})),
     isModalOpened: false,
     setIsModalOpened: (newState) => set(() => ({isModalOpened: newState})),
+    favoriteCollection: [],
+    addCollection: (collection) => set((state) => ({favoriteCollection: [collection, ...state.favoriteCollection]})),
+    deleteCollection: (collection) => set((state) => ({
+        favoriteCollection: state.favoriteCollection.filter((item) => item.id !== collection.id),
+    }))
 }));
 
 export default useStore;

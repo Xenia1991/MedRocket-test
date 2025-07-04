@@ -35,11 +35,8 @@ const Album = ({isClicked, id}: AlbumProps )=> {
     const handleClick = (imgUrl: string) => {
         setUrl(imgUrl);
         setIsModalOpened(true);
-        console.log('click');
     };
     
-    
-
     return (
         <div className={styles.container}>
             {isLoading && <Loader />}
