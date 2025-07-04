@@ -11,10 +11,6 @@ const useStore = create<Store>((set) => ({
     deleteCollection: (collection) => set((state) => ({
         favoriteCollection: state.favoriteCollection.filter((item) => item.id !== collection.id),
     })),
-    title: '',
-    setTitle: (newTitle) => set(() => ({title: newTitle})),
-    isMouseOver: false,
-    setIsMouseOver: (newState) => set(() => ({isMouseOver: newState})),
 }));
 
 export default useStore;
