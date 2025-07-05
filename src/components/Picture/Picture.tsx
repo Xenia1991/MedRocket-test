@@ -41,7 +41,6 @@ const Picture = ({collection, showTooltip}: PictureProps) => {
     return (
         <div 
             className={styles.picture} 
-            key={id} 
             onClick={() => handleClick(url)} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut}

@@ -38,7 +38,7 @@ const Album = ({isClicked, id}: AlbumProps )=> {
         <div className={styles.container}>
             {isLoading && <Loader />}
             {isError && <Error />}
-            {albumCollection?.map((collection) => <Picture collection={collection} showTooltip />)}
+            {albumCollection?.map((collection) => <Picture key={collection.id} collection={collection} showTooltip />)}
         </div>
     );
 };
