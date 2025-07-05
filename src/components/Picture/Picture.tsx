@@ -17,7 +17,7 @@ const Picture = ({collection, showTooltip}: PictureProps) => {
     const [isTooltipOpen, setIsTooltipOpen] = useState<boolean>(false);
     const [pointY, setPointY] = useState<number>(0);
     const [pointX, setPointX] = useState<number>(0);
-    const {id, url, thumbnailUrl} = collection;
+    const {url, thumbnailUrl} = collection;
    
     const handleClick = (imgUrl: string) => {
         setUrl(imgUrl);
