@@ -12,8 +12,9 @@ const Favorites = () => {
     const {favoriteCollection, setCollections} = useStore();
 
     useEffect(() => {
-        const localStorageCollection = JSON.parse(localStorage.getItem(COLLECTION_KEY));
-        setCollections(localStorageCollection);
+        const localStorageCollection = localStorage.getItem(COLLECTION_KEY);
+        const collection: SingleAlbum[] = localStorageCollection ? JSON.parse(localStorageCollection) : [];
+        setCollections(collection);
     }, []);
 
     if (favoriteCollection.length === 0) {

@@ -7,8 +7,7 @@
     margin-top: 6px;
 }
 
-.catalog,
-.favorites {
+.navigationItem {
     color: #1C1C1C;
     box-sizing: border-box;
     width: 372px;
@@ -19,8 +18,15 @@
     text-decoration: none;
 }
 
-.catalog:active,
-.favorites:active {
+.navigationItemActive {
+    color: #1C1C1C;
+    box-sizing: border-box;
+    width: 372px;
+    height: 55px;
+    text-align: center;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
     color: #117DC1;
     box-sizing: border-box;
     background-color: #EDF9FF;
