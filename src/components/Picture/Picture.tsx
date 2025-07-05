@@ -1,10 +1,16 @@
 import { useState } from "react";
 import useStore from "../../store/store";
-import type { PictureProps } from "../../types/picture";
 
 import FavoriteButton from "../FavoriteButton";
 import Tooltip from "../Tooltip";
 import styles from './Picture.module.scss';
+
+import type { SingleAlbum } from "../../types/api";
+
+type PictureProps = {
+    collection: SingleAlbum,
+    showTooltip?: boolean,
+};
 
 const Picture = ({collection, showTooltip}: PictureProps) => {
     const {setUrl, setIsModalOpened} = useStore();

@@ -1,5 +1,8 @@
-import type { ErrorProps } from '../../types/Error';
 import styles from './Error.module.scss';
+
+type ErrorProps = {
+    isColumn?: boolean;
+};
 
 const Error = ({isColumn}: ErrorProps )=> {
     const extraClass = isColumn ? undefined : styles.errorRow;

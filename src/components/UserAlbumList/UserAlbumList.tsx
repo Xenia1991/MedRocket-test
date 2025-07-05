@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 
 import { type SingleUserAlbum, type UserAlbumList as AlbumList} from '../../types/api';
-import type { UserAlbumListProps } from '../../types/UserAlbumList';
 import { getUserAlbums } from '../../api';
 
 import UserAlbum from '../UserAlbum/UserAlbum';
 import Loader from '../Loader';
 import Error from '../Error';
 import styles from './UserAlbumList.module.scss';
+
+type UserAlbumListProps = {
+    userId: number;
+    isClicked: boolean;
+};
 
 const UserAlbumList = ({userId, isClicked}: UserAlbumListProps) => {
     const [albumList, setAlbumList] = useState<AlbumList>([]);

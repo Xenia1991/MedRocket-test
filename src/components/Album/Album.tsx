@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import type { AlbumProps } from '../../types/Album';
 import type { AlbumList } from '../../types/api';
 import { getAlbum } from '../../api';
 
@@ -8,6 +7,11 @@ import Loader from '../Loader';
 import Error from '../Error';
 import styles from './Album.module.scss';
 import Picture from '../Picture';
+
+type AlbumProps = {
+    isClicked: boolean;
+    id: number;
+};
 
 const Album = ({isClicked, id}: AlbumProps )=> {
     const [albumCollection, setAlbumContent] = useState<AlbumList>([]);

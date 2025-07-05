@@ -1,6 +1,11 @@
-import type { TooltipProps } from '../../types/Tooltip';
-
 import styles from './Tooltip.module.scss';
+
+import type { SingleAlbum } from "../../types/api";
+
+export type TooltipProps = SingleAlbum & {
+    top: number,
+    left: number,
+}
 
 const Tooltip = ({title, top, left}: TooltipProps) => {
 
