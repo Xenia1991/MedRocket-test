@@ -7,32 +7,27 @@
     align-items: center;
     justify-content: center;
     gap:  32px;
-}
-
-.errorImg {
-    width: 340px;
-    height: 198px;
-    background-image: url('../../assets/error.png');
-    background-repeat: no-repeat;
-    background-position: 80% 40%;
-}
-
-.errorNotify {
-    font-family: 'Roboto Medium', sans-serif;
-}
-
-.errorMessage {
-    font-family: 'Roboto Regular', sans-serif;
-}
-
-.errorRow {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-}
-
-.errorText {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    &Img {
+        width: 340px;
+        height: 198px;
+        background-image: url('../../assets/error.png');
+        background-repeat: no-repeat;
+        background-position: 80% 40%;
+    }
+    &Notify {
+        font-family: 'Roboto Medium', sans-serif;
+    }
+    &Message {
+        font-family: 'Roboto Regular', sans-serif;
+    }
+    &Row {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+    &Text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 }
