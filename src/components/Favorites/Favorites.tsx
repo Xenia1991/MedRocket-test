@@ -1,11 +1,20 @@
+import { useEffect } from 'react';
 import useStore from '../../store/store';
+
+import { COLLECTION_KEY } from '../../store/store';
+import type { SingleAlbum } from '../../types/api';
 
 import Empty from '../Empty';
 import Picture from '../Picture';
 import styles from './Favorites.module.scss';
 
 const Favorites = () => {
-    const {favoriteCollection} = useStore();
+    const {favoriteCollection, setCollections} = useStore();
+
+    useEffect(() => {
+        const localStorageCollection = JSON.parse(localStorage.getItem(COLLECTION_KEY));
+        setCollections(localStorageCollection);
+    }, []);
 
     if (favoriteCollection.length === 0) {
         return <Empty />;
@@ -13,10 +22,10 @@ const Favorites = () => {
 
     return (
         <div className={styles.collectionContainer}>
-            {favoriteCollection?.map((collection) => {
-                const {title} = collection;
+            {favoriteCollection?.map((collection: SingleAlbum) => {
+                const {title, id} = collection;
                 return (
-                    <div className={styles.imgWrapper}>
+                    <div key={id} className={styles.imgWrapper}>
                         <Picture collection={collection} />
                         <p>{title}</p>
                     </div>

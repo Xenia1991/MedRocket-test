@@ -8,4 +8,5 @@ export type Store = {
     favoriteCollection: SingleAlbum[];
     addCollection: (collection: SingleAlbum) => void;
     deleteCollection: (collection: SingleAlbum) => void;
+    setCollections: (collection: SingleAlbum[]) => void;
 };
