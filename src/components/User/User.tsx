@@ -15,8 +15,8 @@ const User = ({name, id}: SingleUser) => {
     
     return (
         <>
-            <li className={styles.listItem}>
-                <ToggleButton onClick={handleClick} isClicked={isClicked}/>
+            <li className={styles.listItem} onClick={handleClick} >
+                <ToggleButton isClicked={isClicked}/>
                 <div className={styles.userName}>{name}</div>
             </li>
             {isClicked ? <UserAlbumList userId={id} isClicked={isClicked}/> : null}

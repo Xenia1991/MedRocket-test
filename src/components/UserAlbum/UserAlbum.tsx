@@ -14,8 +14,8 @@ const UserAlbum = ({title, id}: SingleUserAlbum) => {
     
     return (
         <>
-            <li className={styles.albumItem}>
-                <ToggleButton onClick={handleClick} isClicked={isClicked}/>
+            <li className={styles.albumItem} onClick={handleClick} >
+                <ToggleButton isClicked={isClicked}/>
                 <div className={styles.albumTitle}>{title}</div>
             </li>
             {isClicked ? <Album isClicked={isClicked} id={id}/> : null}
