@@ -1,7 +1,7 @@
 import useStore from '../../store/store';
 
 import Empty from '../Empty';
-import FavoriteButton from '../FavoriteButton';
+import Picture from '../Picture';
 import styles from './Favorites.module.scss';
 
 const Favorites = () => {
@@ -14,14 +14,13 @@ const Favorites = () => {
     return (
         <div className={styles.collectionContainer}>
             {favoriteCollection?.map((collection) => {
-                const {id, thumbnailUrl, title} = collection;
+                const {title} = collection;
                 return (
-                    <div className={styles.imgWrapper} key={id}>
-                        <FavoriteButton {...collection}/>
-                        <img src={thumbnailUrl} />
+                    <div className={styles.imgWrapper}>
+                        <Picture collection={collection} />
                         <p>{title}</p>
-                    </div>  
-                )
+                    </div>
+                );
             })}
         </div>
     );

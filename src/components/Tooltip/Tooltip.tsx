@@ -1,17 +1,17 @@
-import useStore from '../../store/store';
-
-import type { SingleAlbum } from '../../types/api';
+import type { TooltipProps } from '../../types/Tooltip';
 
 import styles from './Tooltip.module.scss';
 
-const Tooltip = ({title}: SingleAlbum) => {
-    // const {title, isMouseOver} = useStore();
+const Tooltip = ({title, top, left}: TooltipProps) => {
 
-    // if (!isMouseOver) {
-    //     return null;
-    // }
-
-    return (<span className={styles.span}>{title}</span>)
+    return (
+        <div 
+            className={styles.tooltip}
+            style={{top: `${top+30}px`, left: `${left+5}px`}}
+        >
+            {title}
+        </div>
+    )
 };
 
 export default Tooltip;

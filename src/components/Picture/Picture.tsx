@@ -1,15 +1,17 @@
 import { useState } from "react";
 import useStore from "../../store/store";
-import type { SingleAlbum } from "../../types/api";
+import type { PictureProps } from "../../types/picture";
 
 import FavoriteButton from "../FavoriteButton";
 import Tooltip from "../Tooltip";
 import styles from './Picture.module.scss';
 
-const Picture = (collection: SingleAlbum) => {
+const Picture = ({collection, showTooltip}: PictureProps) => {
     const {setUrl, setIsModalOpened} = useStore();
     const [isTooltipOpen, setIsTooltipOpen] = useState<boolean>(false);
-    const {id, url, title, thumbnailUrl} = collection;
+    const [pointY, setPointY] = useState<number>(0);
+    const [pointX, setPointX] = useState<number>(0);
+    const {id, url, thumbnailUrl} = collection;
    
     const handleClick = (imgUrl: string) => {
         setUrl(imgUrl);
@@ -18,22 +20,30 @@ const Picture = (collection: SingleAlbum) => {
 
     const handleMouseOver = () => {
         setIsTooltipOpen(true);
+
     };
 
     const handleMouseOut = () => {
         setIsTooltipOpen(false);
     };
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+        setPointX(e.clientX);
+        setPointY(e.clientY);
+    };
     
     return (
         <div 
-            className={styles.albumImg} 
-            key={id} onClick={() => handleClick(url)} 
+            className={styles.picture} 
+            key={id} 
+            onClick={() => handleClick(url)} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut}
+            onMouseMove={handleMouseMove}
         >
             <FavoriteButton {...collection}/>
-            <img src={thumbnailUrl} />
-            {isTooltipOpen ? <Tooltip {...collection} /> : null}
+            <img src={thumbnailUrl} className={styles.albumImg}/>
+            {isTooltipOpen && showTooltip ? <Tooltip {...collection} top={pointY} left={pointX} /> : null}
         </div>  
     )
 };
