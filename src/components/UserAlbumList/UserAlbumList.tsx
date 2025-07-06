@@ -18,18 +18,20 @@ const UserAlbumList = ({userId, isClicked}: UserAlbumListProps) => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isError, setIsError] = useState<boolean>(false);
     
+    const getList = async () => {
+        try {
+            const albums = await getUserAlbums(userId);
+            setAlbumList(albums);
+        } catch (e) {
+            setIsError(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     useEffect(() => {
         if (isClicked) {
-            const getList = async () => {
-                try {
-                    const albums = await getUserAlbums(userId);
-                    setAlbumList(albums);
-                    setIsLoading(false);
-                } catch (e) {
-                    setIsError(true);
-                    setIsLoading(false);
-                }
-            };
+
             getList();
         }
     }, [userId, isClicked]);

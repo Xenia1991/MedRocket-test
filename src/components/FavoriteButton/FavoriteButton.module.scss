@@ -1,20 +1,22 @@
-.favoriteButtonEmpty,
-.favoriteButtonActive {
-    margin: 8px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
+.favorite {
+    &ButtonEmpty,
+    &ButtonActive {
+        margin: 8px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
 
-.favoriteButtonEmpty {
-    background-image: url('../../assets/star_empty.png');
-}
+    &ButtonEmpty {
+        background-image: url('../../assets/star_empty.png');
+    }
 
-.favoriteButtonActive {
-    background-image: url('../../assets/star_active.png');
+    &ButtonActive {
+        background-image: url('../../assets/star_active.png');
+    }
 }

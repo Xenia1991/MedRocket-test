@@ -9,12 +9,12 @@ import Picture from '../Picture';
 import styles from './Favorites.module.scss';
 
 const Favorites = () => {
-    const {favoriteCollection, setCollections} = useStore();
+    const {favoriteCollection, setCollection} = useStore();
 
     useEffect(() => {
         const localStorageCollection = localStorage.getItem(COLLECTION_KEY);
         const collection: SingleAlbum[] = localStorageCollection ? JSON.parse(localStorageCollection) : [];
-        setCollections(collection);
+        setCollection(collection);
     }, []);
 
     if (favoriteCollection.length === 0) {

@@ -18,18 +18,19 @@ const Album = ({isClicked, id}: AlbumProps )=> {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isError, setIsError] = useState<boolean>(false);
 
+    const getData = async () => {
+        try {
+            const data = await getAlbum(id);
+            setAlbumContent(data);
+        } catch (e) {
+            setIsError(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     useEffect(() => {
         if (isClicked) {
-            const getData= async () => {
-                try {
-                    const data = await getAlbum(id);
-                    setAlbumContent(data);
-                    setIsLoading(false);
-                } catch (e) {
-                    setIsLoading(false);
-                    setIsError(true);
-                }
-            };
             getData();
         }
     }, [isClicked, id]);

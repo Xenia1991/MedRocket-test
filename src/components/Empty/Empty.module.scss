@@ -8,12 +8,14 @@
         align-items: center;
         gap: 32px;
     }
+
     &Img {
         width: 264px;
         height: 198px;
         background-image: url('../../assets/empty.png');
         background-repeat: no-repeat;
     }
+
     &Text {
         display: flex;
         flex-direction: column;
@@ -21,10 +23,12 @@
         justify-content: center;
         align-items: center;
     }
+
     &Notify {
         font-family: 'Roboto Medium', sans-serif;
         font-size: 22px;
     }
+    
     &Message {
         font-family: 'Roboto Regular', sans-serif;
         font-size: 18px; 

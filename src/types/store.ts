@@ -1,12 +1,12 @@
 import type { SingleAlbum } from "./api";
     
 export type Store = {
-    url: string;
+    pictureUrl: string;
     setUrl: (url: string) => void;
     isModalOpened: boolean;
     setIsModalOpened: (state: boolean) => void;
     favoriteCollection: SingleAlbum[];
-    addCollection: (collection: SingleAlbum) => void;
-    deleteCollection: (collection: SingleAlbum) => void;
-    setCollections: (collection: SingleAlbum[]) => void;
+    addToCollection: (collection: SingleAlbum) => void;
+    deleteFromCollection: (collection: SingleAlbum) => void;
+    setCollection: (collection: SingleAlbum[]) => void;
 };

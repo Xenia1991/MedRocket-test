@@ -3,7 +3,7 @@ import useStore from '../../store/store';
 import styles from './Modal.module.scss';
 
 const Modal = () => {
-    const {url, isModalOpened, setIsModalOpened} = useStore();
+    const {pictureUrl, isModalOpened, setIsModalOpened} = useStore();
 
     const handleClick = () => {
         setIsModalOpened(false);
@@ -17,7 +17,7 @@ const Modal = () => {
         <div className={styles.modalOverlay}>
             <button onClick={handleClick} className={styles.modalButton} />
             <div className={styles.modalContent}>
-                <img src={url}/>
+                <img src={pictureUrl}/>
             </div>
         </div>
     );

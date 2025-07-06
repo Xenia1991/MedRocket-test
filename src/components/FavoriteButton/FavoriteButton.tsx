@@ -5,16 +5,16 @@ import type { SingleAlbum } from '../../types/api';
 import styles from './FavoriteButton.module.scss';
 
 const FavoriteButton = (collection : SingleAlbum) => {
-    const {favoriteCollection, addCollection, deleteCollection} = useStore();
+    const {favoriteCollection, addToCollection, deleteFromCollection} = useStore();
     const isActive = favoriteCollection.find((favoriteCollection) => {
         return favoriteCollection.id === collection.id;
     })
     const handleButtonClick = (event: { stopPropagation: () => void; }) => {
         event.stopPropagation();
         if (!isActive) {
-            addCollection(collection);
+            addToCollection(collection);
         } else {
-            deleteCollection(collection);
+            deleteFromCollection(collection);
         }
     };
     const buttonClass = isActive ? styles.favoriteButtonActive : styles.favoriteButtonEmpty;

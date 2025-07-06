@@ -13,17 +13,18 @@ const UserList = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isError, setIsError] = useState<boolean>(false);
 
+    const getList = async () => {
+        try { 
+            const data = await getUserList();
+            setUserList(data);
+        } catch (e) {
+            setIsError(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     useEffect(() => {
-        const getList = async () => {
-            try { 
-                const data = await getUserList();
-                setUserList(data);
-                setIsLoading(false);
-            } catch (e) {
-                setIsError(true);
-                setIsLoading(false);
-            }
-        };
         getList();
     }, []);
 

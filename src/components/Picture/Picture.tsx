@@ -26,7 +26,6 @@ const Picture = ({collection, showTooltip}: PictureProps) => {
 
     const handleMouseOver = () => {
         setIsTooltipOpen(true);
-
     };
 
     const handleMouseOut = () => {
